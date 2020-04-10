@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'latihan'], function () {
+    Route::get('/category/all', 'CategoryController@index');
+    Route::get('/category/search', 'CategoryController@search');
+    Route::get('/category/{id}/delete', 'CategoryController@delete');
+    Route::get('/category/{id}/restore', 'CategoryController@restore');
+    Route::get('/category/{id}/permanent-delete', 'CategoryController@permanentDelete');
+});
