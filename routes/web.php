@@ -21,4 +21,5 @@ Route::group(['prefix' => 'latihan'], function () {
     Route::get('/category/{id}/delete', 'CategoryController@delete');
     Route::get('/category/{id}/restore', 'CategoryController@restore');
     Route::get('/category/{id}/permanent-delete', 'CategoryController@permanentDelete');
+    Route::view('layouts', 'child');
 });

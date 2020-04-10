@@ -11,7 +11,8 @@ class CategoryController extends Controller
     public function index()
     {
         // "TODO: menampilkan semua kategori dari DB";
-        return Category::all();
+        $category = Category::paginate(3);
+        return view("category.index", ["category" => $category]);
 
         // return Category::all(); menampilkan semua kategori
         // return Category::withTrashed()->get(); menampilkan semua kategori beserta soft deleted
